@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="globalCtrl">
+
+<head>
+	<!-- Standard Meta -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+	<title>App Title</title>
+	<link rel="shortcut icon" href="/public/img/favicon.png">
+
+	<!-- JQuery -->
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+
+	<!-- Semantic UI -->
+	<link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.min.css">
+	<script src="/bower_components/semantic/dist/semantic.min.js"></script>
+
+	<!-- AngularJS -->
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+	<!-- App -->
+	<!-- FIXME: Manual app src files method -->
+	<link rel="stylesheet" type="text/css" href="/core/app.css">
+	<script src="/app.mdl.js"></script>
+	<script src="/common/directives/app-ui-init.drv.js"></script>
+	<script src="/common/directives/app-loader.comp.js"></script>
+	<script src="/common/directives/app-loader-box.comp.js"></script>
+	<script src="/core/global.ctrl.js"></script>
+	<script src="/core/home/home.ctrl.js"></script>
+	<script src="/core/about/about.ctrl.js"></script>
+
+	<!-- FIXME: Aggregated app files method -->
+	<!-- <link rel="stylesheet" type="text/css" href="/dist/app.min.css"> -->
+	<!-- <script src="/dist/app.min.js"></script> -->
+
+</head>
+
+<body>
+
+	<nav class="ui fixed inverted menu">
+		<div class="ui container">
+			<a href="#/" class="header item">
+				<img class="logo" src="/public/img/logo.png"> Project Name
+			</a>
+			<a href="#/" ng-class="!area && 'active'" class="item">Home</a>
+			<div class="ui simple dropdown item">
+				Dropdown <i class="dropdown icon"></i>
+				<div class="menu">
+					<a class="item" ng-class="area == 'about' && 'active'" href="#/about">About</a>
+					<a class="item" href="#">Link Item</a>
+					<div class="divider"></div>
+					<div class="header">Header Item</div>
+					<div class="item">
+						<i class="dropdown icon"></i> Sub Menu
+						<div class="menu">
+							<a class="item" href="#">Link Item</a>
+							<a class="item" href="#">Link Item</a>
+						</div>
+					</div>
+					<a class="item" href="#">Link Item</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<main ui-view></main>
+
+</body>
+
+</html>

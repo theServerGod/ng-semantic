@@ -31,3 +31,10 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+logs/*
+!.gitkeep
+bower_components/
+tmp
+.DS_Store
+.idea
