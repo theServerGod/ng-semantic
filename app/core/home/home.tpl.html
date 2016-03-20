@@ -6,7 +6,7 @@
 	<app-ui-init app-ui-component="cardsHover"></app-ui-init>
 
 	<h1 class="ui header">App Home</h1>
-	<p>Message: {{ msg }}</p>
+	<p>Message: {{ home.msg }}</p>
 
 	<!-- Example Semantic UI components -->
 	<div class="ui segment">
@@ -15,32 +15,32 @@
 				<label>How often do you use checkboxes?</label>
 				<div class="field">
 					<div class="ui radio checkbox">
-						<input type="radio" ng-model="test.group1" name="radioGroup" value="value 1">
+						<input type="radio" ng-model="home.test.group1" name="radioGroup" value="value 1">
 						<label>Once a week</label>
 					</div>
 				</div>
 				<div class="field">
 					<div class="ui radio checkbox">
-						<input type="radio" ng-model="test.group1" name="radioGroup" value="value 2">
+						<input type="radio" ng-model="home.test.group1" name="radioGroup" value="value 2">
 						<label>2-3 times a week</label>
 					</div>
 				</div>
 				<div class="field">
 					<div class="ui radio checkbox">
-						<input type="radio" ng-model="test.group1" name="radioGroup" value="value 3">
+						<input type="radio" ng-model="home.test.group1" name="radioGroup" value="value 3">
 						<label>Once a day</label>
 					</div>
 				</div>
 				<div class="field">
 					<div class="ui radio checkbox">
-						<input type="radio" ng-model="test.group1" name="radioGroup" value="value 4">
+						<input type="radio" ng-model="home.test.group1" name="radioGroup" value="value 4">
 						<label>Twice a day</label>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		Your selection is: {{ test.group1 }}
+		Your selection is: {{ home.test.group1 }}
 	</div>
 
 	<div class="ui segment">
@@ -69,17 +69,17 @@
 	</div>
 
 	<div class="ui segment">
-		<select ng-model="test.select1" class="ui search fluid dropdown" app-ui-init="dropdown">
+		<select ng-model="home.test.select1" class="ui search fluid dropdown" app-ui-init="dropdown">
 			<option value="" disabled>Select value</option>
 			<option value="foo">Foo</option>
 			<option value="bar">Bar</option>
 			<option value="baz">Baz</option>
 		</select>
-		You selected: {{ test.select1 }}
+		You selected: {{ home.test.select1 }}
 	</div>
 
 	<div class="ui segment">
-		<select name="skills" ng-model="test.select2" multiple="" class="ui fluid dropdown">
+		<select name="skills" ng-model="home.test.select2" multiple="" class="ui fluid dropdown">
 			<option value="" disabled>Skills</option>
 			<option value="angular">Angular</option>
 			<option value="css">CSS</option>
@@ -100,11 +100,11 @@
 			<option value="ui">UI Design</option>
 			<option value="ux">User Experience</option>
 		</select>
-		You selected: {{ test.select2 }}
+		You selected: {{ home.test.select2 }}
 	</div>
 
 	<div class="ui segment">
-		<button class="ui primary button" ng-click="success()">
+		<button class="ui primary button" ng-click="home.success()">
 			Save
 		</button>
 		<button class="ui button">
@@ -114,7 +114,7 @@
 		<div class="ui buttons">
 			<button class="ui button">Cancel</button>
 			<div class="or"></div>
-			<button class="ui positive button active" ng-click="success()">Save</button>
+			<button class="ui positive button active" ng-click="home.success()">Save</button>
 		</div>
 
 		<button class="ui basic loading button">Loading</button>
@@ -160,11 +160,11 @@
 					<div class="ui dimmer">
 						<div class="content">
 							<div class="center">
-								<div class="ui inverted button" ng-click="success()">Add Friend</div>
+								<div class="ui inverted button" ng-click="home.success()">Add Friend</div>
 							</div>
 						</div>
 					</div>
-					<img src="public/img/avatar/molly.png">
+					<img src="public/images/avatar/molly.png">
 				</div>
 				<div class="content">
 					<a class="header">Team Fu</a>
@@ -184,13 +184,13 @@
 
 	<div class="ui segment">
 		<div class="ui checkbox block">
-			<input type="checkbox" ng-model="isLoading" name="checkboxLoading">
-			<label>Toggle Loading: {{ isLoading }}</label>
+			<input type="checkbox" ng-model="home.isLoading" name="checkboxLoading">
+			<label>Toggle Loading: {{ home.isLoading }}</label>
 		</div>
 
 		<div class="ui toggle checkbox">
-			<input type="checkbox" ng-model="isLoading" name="toggleLoading">
-			<label>Toggle Loading (Switch): {{ isLoading }}</label>
+			<input type="checkbox" ng-model="home.isLoading" name="toggleLoading">
+			<label>Toggle Loading (Switch): {{ home.isLoading }}</label>
 		</div>
 	</div>
 
@@ -198,7 +198,7 @@
 
 		<div class="ui segment">
 
-			<app-loader ng-if="isLoading" dimmer="show"></app-loader>
+			<app-loader ng-if="home.isLoading" dimmer="show"></app-loader>
 
 			<h2>Loaded content</h2>
 			<p>This demonstrates a loader component created as a wrapper for the Semantic UI loader element</p>
@@ -206,7 +206,7 @@
 
 		<div class="ui segment">
 
-			<app-loader ng-if="isLoading" loader-size="large"></app-loader>
+			<app-loader ng-if="home.isLoading" loader-size="large"></app-loader>
 
 			<h2>Loaded content</h2>
 			<p>This demonstrates a loader component created as a wrapper for the Semantic UI loader element</p>
@@ -219,9 +219,9 @@
 
 	<div class="ui segment">
 		<h2>Modal Test</h2>
-		<button ng-click="toggleModal()" class="ui positive button">Open Modal</button>
+		<button ng-click="global.modal('#testModal', 'show')" class="ui positive button">Open Modal</button>
 
-		<div id="modalTest" class="ui modal">
+		<div id="testModal" class="ui modal">
 			<i class="close icon"></i>
 			<div class="header">
 				Modal Title
@@ -235,8 +235,8 @@
 				</div>
 			</div>
 			<div class="actions">
-				<div class="ui negative button" ng-click="toggleModal()">Cancel</div>
-				<div class="ui secondary button" ng-click="toggleModal()">OK</div>
+				<div class="ui negative button" ng-click="global.modal('#testModal', 'hide')">Cancel</div>
+				<div class="ui secondary button">OK</div>
 			</div>
 		</div>
 

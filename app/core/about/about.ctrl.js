@@ -7,10 +7,11 @@ angular.module('app.core.about', [
 	$stateProvider
 		.state('about', {
 			url: '/about',
-			templateUrl: 'core/about/about.tpl.html',
-			controller: 'aboutCtrl'
+			templateUrl: '/core/about/about.tpl.html',
+			controller: 'aboutCtrl',
+			controllerAs: 'about'
 		});
 })
-.controller('aboutCtrl', function($scope) {
+.controller('aboutCtrl', function() {
 
 });
