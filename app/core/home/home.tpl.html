@@ -125,6 +125,19 @@
 	</div>
 
 	<div class="ui segment">
+		<h3 class="ui header">Logger</h3>
+		<button class="ui button positive" ng-click="global.notify.success('This is a toast using the toastr library!', null, 'Success Title!')">
+			Show success notification
+		</button>
+		<button class="ui button negative" ng-click="global.notify.error('This is a toast using the toastr library!', null, 'Error Title!')">
+			Show error notification
+		</button>
+		<button class="ui button primary" ng-click="global.notify.info('This is a toast using the toastr library!', null, 'Info Title!')">
+			Show info notification
+		</button>
+	</div>
+
+	<div class="ui segment">
 		<div class="ui steps">
 			<a class="active step">
 				<i class="truck icon"></i>

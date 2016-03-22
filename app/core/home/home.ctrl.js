@@ -1,29 +1,22 @@
-'use strict';
+(function() {
+	'use strict';
 
-angular.module('app.core.home', [
-	'ui.router',
-])
-.config(function($stateProvider, $urlRouterProvider) {
-	$stateProvider
-		.state('home', {
-			url: '/',
-			templateUrl: '/core/home/home.tpl.html',
-			controller: 'homeCtrl',
-			controllerAs: 'home'
-		});
-})
-.controller('homeCtrl', function() {
-	// ViewModel
-	var vm = this;
+	angular
+		.module('app.core.home')
+		.controller('HomeCtrl', HomeCtrl);
 
-	// Used to show/hide UI loaders
-	vm.isLoading = true;
+	function HomeCtrl() {
+		// ViewModel
+		var vm = this;
 
-	// FIXME: Remove these test definitions
-	vm.msg = 'Welcome!';
-	vm.test = {};
-	vm.success = function() {
-		alert('Success!');
-	};
+		// Used to show/hide UI loaders
+		vm.isLoading = true;
+		vm.msg = 'Welcome!';
+		vm.test = {};
+		vm.success = success;
 
-});
+		function success() {
+			alert('Success!');
+		}
+	}
+})();

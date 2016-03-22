@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app" ng-controller="globalCtrl as global">
+<html lang="en" ng-app="app" ng-controller="GlobalCtrl as global">
 
 <head>
 	<!-- Standard Meta -->
@@ -10,27 +10,46 @@
 	<title ng-bind="global.APP_TITLE"></title>
 	<link rel="shortcut icon" href="/public/images/favicon.png">
 
-	<!-- JQuery -->
+	<!-- inject-vendor:css -->
+	<link rel="stylesheet" href="/bower_components/semantic/dist/semantic.min.css">
+	<link rel="stylesheet" href="/bower_components/toastr/toastr.min.css">
+	<!-- endinject -->
+
+	<!-- inject:css -->
+	<link rel="stylesheet" type="text/css" href="/core/app.css">
+	<!-- endinject -->
+
+	<!-- inject-vendor:js -->
 	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
-
-	<!-- Semantic UI -->
-	<link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.min.css">
 	<script src="/bower_components/semantic/dist/semantic.min.js"></script>
-
-	<!-- AngularJS -->
 	<script src="/bower_components/angular/angular.min.js"></script>
 	<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="/bower_components/toastr/toastr.min.js"></script>
+	<script src="/bower_components/moment/min/moment.min.js"></script>
+	<!-- endinject -->
 
-	<!-- App -->
-	<!-- FIXME: Manual app src files method -->
-	<link rel="stylesheet" type="text/css" href="/core/app.css">
+	<!-- inject:js -->
+	<!-- Bootstrapping -->
 	<script src="/app.mod.js"></script>
+
+	<!-- Reusable modules -->
+	<script src="/common/services/app-modal.srv.js"></script>
+	<script src="/common/services/logger.srv.js"></script>
 	<script src="/common/directives/app-ui-init.drv.js"></script>
 	<script src="/common/directives/app-loader.comp.js"></script>
 	<script src="/common/directives/app-loader-box.comp.js"></script>
+
+	<!-- global module -->
 	<script src="/core/global.ctrl.js"></script>
+
+	<!-- home module -->
+	<script src="/core/home/home.mod.js"></script>
 	<script src="/core/home/home.ctrl.js"></script>
+
+	<!-- about module -->
+	<script src="/core/about/about.mod.js"></script>
 	<script src="/core/about/about.ctrl.js"></script>
+	<!-- endinject -->
 
 	<!-- FIXME: Aggregated app files method -->
 	<!-- <link rel="stylesheet" type="text/css" href="/dist/app.min.css"> -->
