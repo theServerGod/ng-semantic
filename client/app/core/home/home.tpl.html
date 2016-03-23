@@ -177,7 +177,7 @@
 							</div>
 						</div>
 					</div>
-					<img src="public/images/avatar/molly.png">
+					<img src="/content/images/avatar/molly.png">
 				</div>
 				<div class="content">
 					<a class="header">Team Fu</a>
@@ -233,27 +233,9 @@
 	<div class="ui segment">
 		<h2>Modal Test</h2>
 		<button ng-click="global.modal('#testModal', 'show')" class="ui positive button">Open Modal</button>
-
-		<div id="testModal" class="ui modal">
-			<i class="close icon"></i>
-			<div class="header">
-				Modal Title
-			</div>
-			<div class="image content">
-				<div class="image">
-					An image can appear on left or an icon
-				</div>
-				<div class="description">
-					A description can appear on the right
-				</div>
-			</div>
-			<div class="actions">
-				<div class="ui negative button" ng-click="global.modal('#testModal', 'hide')">Cancel</div>
-				<div class="ui secondary button">OK</div>
-			</div>
-		</div>
-
 	</div>
 
 
 </div>
+
+<ng-include src="'/app/common/modal/example-common-modal.inc.html'"></ng-include>

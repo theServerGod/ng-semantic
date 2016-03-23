@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('app.common.modalService', [])
+		.module('app.common.modal')
 		.factory('appModalService', modalService);
 
 	function modalService() {

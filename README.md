@@ -12,17 +12,17 @@ First, install the dependencies. In the project root directory, run the followin
 
 	bower install
 
-Then start the app. This project seed allows you to choose and configure your own webserver, such as Node.js, Apache, or Nginx. Just configure your server to serve the files under the `app/` directory. For instance, for a simple Node.js-based server, you can use the npm package `http-server`.
+Then start the app. This project seed allows you to choose and configure your own webserver, such as Node.js, Apache, or Nginx. Just configure your server to serve the files under the `client/` directory. For instance, for a simple Node.js-based server, you can use the npm package `http-server`.
 
-	http-server -p 80 app/
+	http-server -p 80 client/
 
-This will serve the `app/` directory on port 80.
+This will serve the `client/` directory on port 80.
 
 If using port 80, make sure the server is able to use it. Do not start a server with `sudo`, obviously.
 
 Running the App in Production
 -----------------------------
-This really depends on how complex your app is and the overall infrastructure of your system, but the general rule is that all you need in production are all the files under the `app/` directory. Everything else should be omitted.
+This really depends on how complex your app is and the overall infrastructure of your system -- such as whether you create your own backend, but the general rule is that all you need in production are all the files under the `client/` directory. Everything else should be omitted.
 
 Semantic UI
 -----------

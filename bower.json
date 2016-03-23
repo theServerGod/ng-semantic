@@ -13,7 +13,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "app/bower_components",
+    "client/bower_components",
     "test",
     "tests"
   ],

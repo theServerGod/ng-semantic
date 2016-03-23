@@ -5,11 +5,11 @@
 		.module('app.core.global', [])
 		.controller('GlobalCtrl', GlobalCtrl);
 
-	function GlobalCtrl($rootScope, $scope, APP_TITLE, logger, appModalService) {
+	function GlobalCtrl($rootScope, $scope, config, logger, appModalService) {
 		// ViewModel
 		var vm = this;
 
-		vm.APP_TITLE = APP_TITLE;
+		vm.appTitle = config.appTitle;
 		vm.area = null;
 		vm.modal = appModalService.action;
 		vm.notify = logger;
