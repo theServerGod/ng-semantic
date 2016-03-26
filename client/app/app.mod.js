@@ -20,5 +20,6 @@
 		/*
 		 * Declare required non-Angular third party libraries
 		 */
-		.constant('toastr', toastr);
+		.constant('toastr', toastr)
+		.constant('moment', moment);
 })();

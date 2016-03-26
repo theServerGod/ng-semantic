@@ -1,0 +1,47 @@
+{
+	"client": "./client/",
+	"server": "./server/",
+	"api": "/api",
+	"data": "./data/",
+	"test": "./client/test/",
+	"html": "./client/**/*.html",
+	"htmltemplates": "./client/app/**/*.html",
+	"vendorjs": [
+		"./bower_components/jquery/dist/jquery.min.js",
+		"./bower_components/semantic/dist/semantic.min.js",
+		"./bower_components/toastr/toastr.min.js",
+		"./bower_components/moment/min/moment.min.js",
+		"./bower_components/angular/angular.min.js",
+		"./bower_components/angular-ui-router/release/angular-ui-router.min.js"
+	],
+	"vendorcss": [
+		"./bower_components/semantic/dist/semantic.min.css",
+		"./bower_components/toastr/toastr.min.css"
+	],
+	"css": [
+		"./client/app/core/app.css"
+	],
+	"js": [
+		"./client/app/**/*mod*.js",
+		"./client/app/**/*.js",
+		"!./client/app/**/*-spaghetti.js"
+	],
+	"specs": [
+		"./client/test/specs/*.spec.js"
+	],
+	"nodejs": [
+		"./server/**/*.js"
+	],
+	"fonts": [
+		"./bower_components/font-awesome/fonts/**/*.*"
+	],
+	"images": [
+		"./client/content/images/**/*"
+	],
+	"report": "./report/",
+	"build": "./build/",
+	"buildClient": "./client/build/",
+	"buildIncludes": [
+		"./bower_components/semantic/dist/**/themes/**/*.*"
+	]
+}

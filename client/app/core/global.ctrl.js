@@ -5,6 +5,12 @@
 		.module('app.core.global', [])
 		.controller('GlobalCtrl', GlobalCtrl);
 
+	/**
+	 * Global app controller
+	 *
+	 * This controller should be the top-level controller in the app, with all
+	 * other controllers existing as child controllers.
+	 */
 	function GlobalCtrl($rootScope, $scope, config, logger, appModalService) {
 		// ViewModel
 		var vm = this;
