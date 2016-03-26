@@ -39,6 +39,9 @@ To see the list of available gulp tasks for the project, run:
 
 	gulp help
 
+### Safe minification / ng DI
+Typically, one would have to add the `$inject` Property Annotation for their app scripts. Assuming they are creating a `logger` factory, it may look something like `logger.$inject = ['$log', 'toastr'];` that would be inserted above their `logger` function file. This would allow the minifiers to rename the function parameters and still be able to inject the right services. However, for the purposes of this project you DO NOT HAVE TO do this as ng-annotate currently cleverly detects the dependencies automatically. This saves writing the dependencies twice in the same file. That being said, it wouldn't hurt to properly declare your dependencies using the `$inject` property on your functions if you wished to do so.
+
 Running the App in Production
 -----------------------------
 This really depends on how complex your app is and the overall infrastructure of your system -- such as whether you create your own backend, but the general rule is that all you need in production are all the files under the `client/` directory. Everything else should be omitted.

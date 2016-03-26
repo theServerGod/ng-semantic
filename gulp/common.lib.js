@@ -6,8 +6,8 @@
 
 	/**
 	 * Formatter for bytediff to display the size changes after processing
-	 * @param  {Object} data - byte data
-	 * @return {String}      Difference in bytes, formatted
+	 * @param {Object} data - byte data
+	 * @return {string} Difference in bytes, formatted
 	 */
 	function bytediffFormatter(data) {
 		var difference = (data.savings > 0) ? ' smaller.' : ' larger.';
@@ -18,9 +18,9 @@
 
 	/**
 	 * Format a number as a percentage
-	 * @param  {Number} num       Number to format as a percent
-	 * @param  {Number} precision Precision of the decimal
-	 * @return {String}           Formatted percentage
+	 * @param {number} num - Number to format as a percent
+	 * @param {number} precision - Precision of the decimal
+	 * @return {string} Formatted percentage
 	 */
 	function formatPercent(num, precision) {
 		return (num * 100).toFixed(precision);

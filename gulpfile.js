@@ -1,3 +1,6 @@
+/* jshint node:true */
+'use strict';
+
 var gulp = require('gulp');
 var del = require('del');
 var paths = require('./gulp.conf.json');
@@ -16,7 +19,16 @@ var common = require('./gulp/common.lib');
 /**
  * Specifies where the built files should go in the project (i.e. '/build' or '/client/build')
  */
-const BUILD_PATH = paths.buildClient; // jshint ignore:line
+const BUILD_PATH = paths.buildClient;
+
+/**
+ * Configurations for various gulp plugins to pass into the plugin constructors
+ */
+var pluginsConfig = {
+	cleanCss: {
+		processImport: false, // Prevents 'Broken @import declaration' error during build task
+	},
+};
 
 /**
  * List the available gulp tasks
@@ -77,7 +89,7 @@ gulp.task('vendorcss', function() {
 		.pipe(vendorFilter)
 		.pipe(plugins.concat('vendor.min.css'))
 		.pipe(plugins.bytediff.start())
-		.pipe(plugins.cleanCss({}))
+		.pipe(plugins.cleanCss(pluginsConfig.cleanCss))
 		.pipe(plugins.bytediff.stop(common.bytediffFormatter))
 		.pipe(gulp.dest(BUILD_PATH));
 });
@@ -93,7 +105,7 @@ gulp.task('css', function() {
 		.pipe(plugins.concat('app.min.css')) // Before bytediff or after
 		.pipe(plugins.autoprefixer('last 2 version', '> 5%'))
 		.pipe(plugins.bytediff.start())
-		.pipe(plugins.cleanCss({}))
+		.pipe(plugins.cleanCss(pluginsConfig.cleanCss))
 		.pipe(plugins.bytediff.stop(common.bytediffFormatter))
 		//        .pipe(plug.concat('all.min.css')) // Before bytediff or after
 		.pipe(gulp.dest(BUILD_PATH));

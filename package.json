@@ -5,9 +5,9 @@
 	"main": "gulpfile.js",
 	"scripts": {
 		"init": "npm install",
-		"install": "bower install",
 		"start": "node server/app.js",
-		"test": "gulp test"
+		"test": "gulp test",
+		"postinstall": "bower install"
 	},
 	"repository": {
 		"type": "git",
