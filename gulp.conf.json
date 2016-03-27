@@ -19,28 +19,28 @@
 		"./bower_components/toastr/toastr.min.css"
 	],
 	"css": [
-		"./client/app/core/app.css"
+		"./src/client/app/core/app.css"
 	],
 	"js": [
-		"./client/app/**/*mod*.js",
-		"./client/app/**/*.js",
-		"!./client/app/**/*-spaghetti.js"
+		"./src/client/app/**/*mod*.js",
+		"./src/client/app/**/*.js",
+		"!./src/client/app/**/*-spaghetti.js"
 	],
 	"specs": [
-		"./client/test/specs/*.spec.js"
+		"./src/tests/client/specs/*.spec.js"
 	],
 	"nodejs": [
-		"./server/**/*.js"
+		"./src/server/**/*.js"
 	],
 	"fonts": [
 		"./bower_components/font-awesome/fonts/**/*.*"
 	],
 	"images": [
-		"./client/content/images/**/*"
+		"./src/client/content/images/**/*"
 	],
 	"report": "./report/",
 	"build": "./build/",
-	"buildClient": "./client/build/",
+	"buildClient": "./src/client/build/",
 	"buildIncludes": [
 		"./bower_components/semantic/dist/**/themes/**/*.*"
 	]

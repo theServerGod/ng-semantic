@@ -14,7 +14,7 @@ var port = process.env.PORT || 8080;
 /**
  * Use project's common gulp utils lib
  */
-var common = require('./gulp/common.lib');
+var common = require('./gulp/common.gulp.lib');
 
 /**
  * Specifies where the built files should go in the project (i.e. '/build' or '/client/build')
@@ -169,7 +169,7 @@ gulp.task('build', ['vendorjs', 'vendorcss', 'js', 'css', 'fonts', 'buildInclude
  * @return {Stream}
  */
 gulp.task('clean', function(cb) {
-	log('Cleaning: ' + plugins.util.colors.blue(paths.build));
+	log('Cleaning: ' + plugins.util.colors.blue(paths.build, paths.buildClient));
 
 	var delPaths = [].concat(paths.build, paths.report, paths.buildClient);
 	del(delPaths, cb);
