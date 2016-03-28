@@ -153,7 +153,7 @@ gulp.task('images', function() {
  * Build the optimized app
  * @return {Stream}
  */
-gulp.task('build', ['vendorjs', 'vendorcss', 'js', 'css', 'fonts', 'buildIncludes'], function() {
+gulp.task('build', ['vendorjs', 'vendorcss', 'js', 'css', 'fonts', 'images', 'buildIncludes'], function() {
 	log('Building the optimized app');
 
 	return gulp.src('').pipe(plugins.notify({
@@ -202,9 +202,9 @@ gulp.task('watch', function() {
 	gulp
 		.watch(vendors, ['vendorjs', 'vendorcss'])
 		.on('change', logWatch);
-		
+
 	gulp
-		.watch(gulpconf, ['vendorjs', 'vendorcss', 'js', 'css', 'images', 'buildIncludes'])
+		.watch(gulpconf, ['vendorjs', 'vendorcss', 'js', 'css', 'fonts', 'images', 'buildIncludes'])
 		.on('change', logWatch);
 
 	function logWatch(event) {
