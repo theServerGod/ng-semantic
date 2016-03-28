@@ -181,20 +181,30 @@ gulp.task('clean', function(cb) {
 gulp.task('watch', function() {
 	log('Watching all files');
 
-	var css = ['gulpfile.js'].concat(paths.css, paths.vendorcss);
-	var images = ['gulpfile.js'].concat(paths.images);
-	var js = ['gulpfile.js'].concat(paths.js);
+	var css = paths.css;
+	var gulpconf = ['gulpfile.js', 'gulp.conf.json'];
+	var images = paths.images;
+	var js = paths.js;
+	var vendors = [].concat(paths.vendorjs, paths.vendorcss);
 
 	gulp
-		.watch(js, ['js', 'vendorjs'])
+		.watch(js, ['js'])
 		.on('change', logWatch);
 
 	gulp
-		.watch(css, ['css', 'vendorcss'])
+		.watch(css, ['css'])
 		.on('change', logWatch);
 
 	gulp
 		.watch(images, ['images'])
+		.on('change', logWatch);
+
+	gulp
+		.watch(vendors, ['vendorjs', 'vendorcss'])
+		.on('change', logWatch);
+		
+	gulp
+		.watch(gulpconf, ['vendorjs', 'vendorcss', 'js', 'css', 'images', 'buildIncludes'])
 		.on('change', logWatch);
 
 	function logWatch(event) {

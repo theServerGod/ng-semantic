@@ -20,6 +20,7 @@
 		/*
 		 * Declare required non-Angular third party libraries
 		 */
-		.constant('toastr', toastr)
-		.constant('moment', moment);
+		.constant('lodash', _)
+		.constant('moment', moment)
+		.constant('toastr', toastr);
 })();
