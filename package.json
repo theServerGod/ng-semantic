@@ -1,40 +1,42 @@
 {
-	"name": "ng-semantic",
-	"version": "1.0.0",
-	"description": "ng-semantic - AngularJS and Semantic UI project seed",
-	"main": "gulpfile.js",
-	"scripts": {
-		"init": "npm install",
-		"start": "node server/app.js",
-		"test": "gulp test",
-		"postinstall": "bower install"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/theServerGod/ng-semantic.git"
-	},
-	"author": "Jake Skoric",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/theServerGod/ng-semantic/issues"
-	},
-	"homepage": "https://github.com/theServerGod/ng-semantic#readme",
-	"dependencies": {
-		"del": "^2.2.0",
-		"gulp": "^3.9.1",
-		"gulp-autoprefixer": "^3.1.0",
-		"gulp-bytediff": "^1.0.0",
-		"gulp-cache": "^0.4.3",
-		"gulp-clean-css": "^2.0.4",
-		"gulp-concat": "^2.6.0",
-		"gulp-filter": "^4.0.0",
-		"gulp-imagemin": "^2.4.0",
-		"gulp-load-plugins": "^1.2.0",
-		"gulp-ng-annotate": "^2.0.0",
-		"gulp-nodemon": "^2.0.6",
-		"gulp-notify": "^2.2.0",
-		"gulp-task-listing": "^1.0.1",
-		"gulp-uglify": "^1.5.3",
-		"gulp-util": "^3.0.7"
-	}
+  "name": "ng-semantic",
+  "version": "1.0.0",
+  "description": "ng-semantic - AngularJS and Semantic UI project seed",
+  "main": "gulpfile.js",
+  "scripts": {
+    "init": "npm install",
+    "start": "node server/app.js",
+    "test": "gulp test",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theServerGod/ng-semantic.git"
+  },
+  "author": "Jake Skoric",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theServerGod/ng-semantic/issues"
+  },
+  "homepage": "https://github.com/theServerGod/ng-semantic#readme",
+  "dependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-bytediff": "^1.0.0",
+    "gulp-cache": "^0.4.3",
+    "gulp-clean-css": "^2.0.4",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-notify": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7"
+  }
 }

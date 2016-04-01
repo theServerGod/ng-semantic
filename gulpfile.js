@@ -12,6 +12,11 @@ var log = plugins.util.log;
 var port = process.env.PORT || 8080;
 
 /**
+ * App configuration
+ */
+var config = require('./config/app.conf');
+
+/**
  * Use project's common gulp utils lib
  */
 var common = require('./gulp/common.gulp.lib');
@@ -43,10 +48,12 @@ gulp.task('vendorjs', function() {
 	log('Bundling, minifying, and copying the Vendor JavaScript');
 
 	return gulp.src(paths.vendorjs)
+		//.pipe(plugins.if(config.gulp.debugJS, plugins.sourcemaps.init())) // Disabled souremapping for vendorjs
 		.pipe(plugins.concat('vendor.min.js'))
 		.pipe(plugins.bytediff.start())
 		.pipe(plugins.uglify())
 		.pipe(plugins.bytediff.stop(common.bytediffFormatter))
+		//.pipe(plugins.if(config.gulp.debugJS, plugins.sourcemaps.write()))
 		.pipe(gulp.dest(BUILD_PATH));
 });
 
@@ -61,7 +68,7 @@ gulp.task('js', [], function() {
 	var source = [].concat(paths.js, paths.build);
 	return gulp
 		.src(source)
-		// .pipe(plug.sourcemaps.init()) // get screwed up in the file rev process
+		.pipe(plugins.if(config.gulp.debugJS, plugins.sourcemaps.init()))
 		.pipe(plugins.concat('app.min.js'))
 		.pipe(plugins.ngAnnotate({
 			add: true,
@@ -72,7 +79,7 @@ gulp.task('js', [], function() {
 			mangle: true
 		}))
 		.pipe(plugins.bytediff.stop(common.bytediffFormatter))
-		// .pipe(plug.sourcemaps.write('./'))
+		.pipe(plugins.if(config.gulp.debugJS, plugins.sourcemaps.write()))
 		.pipe(gulp.dest(BUILD_PATH));
 });
 
@@ -107,7 +114,7 @@ gulp.task('css', function() {
 		.pipe(plugins.bytediff.start())
 		.pipe(plugins.cleanCss(pluginsConfig.cleanCss))
 		.pipe(plugins.bytediff.stop(common.bytediffFormatter))
-		//        .pipe(plug.concat('all.min.css')) // Before bytediff or after
+		//.pipe(plug.concat('all.min.css')) // Before bytediff or after
 		.pipe(gulp.dest(BUILD_PATH));
 });
 

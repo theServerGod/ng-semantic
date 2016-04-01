@@ -42,7 +42,14 @@ To see the list of available gulp tasks for the project, run:
 	gulp help
 
 ### Safe minification / ng DI
+By default, this app does not include the `ng-strict-di` directive to prevent DI errors as the default Gulp minification process safely keeps declared dependencies for Angular app modules. To enable Angular's strict DI feature add the directive to the element that declares `ng-app`. For example:
+
+	<html lang="en" ng-app="app" ng-controller="GlobalCtrl as global" ng-strict-di>
+
 Typically, one would have to add the `$inject` Property Annotation for their app scripts. Assuming we are creating a `logger` factory, it may look something like `logger.$inject = ['$log', 'toastr'];` that would be inserted above our `logger` function file. This would allow the minifiers to rename the function parameters and still be able to inject the right services. However, for the purposes of this project you DO NOT HAVE TO do this as ng-annotate currently cleverly detects the dependencies automatically. This saves writing the dependencies twice in the same file. That being said, it wouldn't hurt to properly declare your dependencies using the `$inject` property on your functions if you wished to do so.
+
+### Sourcemaps
+By default, this app enables sourcemaps for the app JS scripts. This can be disabled in the app global config file in `config/app.conf.js`.
 
 ### Adding / updating vendor files (bower components)
 If you've added a new bower component library like Lodash, simply add the applicable path to the library in the `vendorjs`/`vendorcss` properties of `./gulp.conf.json` path configuration object. If you have `gulp watch` task already running, it should trigger (after the file save) and automatically rebuild your codebase.
