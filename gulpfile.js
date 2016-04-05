@@ -194,28 +194,33 @@ gulp.task('watch', function() {
 	var js = paths.js;
 	var vendors = [].concat(paths.vendorjs, paths.vendorcss);
 
-	gulp
-		.watch(js, ['js'])
-		.on('change', logWatch);
+	plugins.watch(js, function(event) {
+		gulp.start('js');
+		logWatch(event, js);
+	});
 
-	gulp
-		.watch(css, ['css'])
-		.on('change', logWatch);
+	plugins.watch(css, function(event) {
+		gulp.start('css');
+		logWatch(event, css);
+	});
 
-	gulp
-		.watch(images, ['images'])
-		.on('change', logWatch);
+	plugins.watch(images, function(event) {
+		gulp.start('images');
+		logWatch(event, images);
+	});
 
-	gulp
-		.watch(vendors, ['vendorjs', 'vendorcss'])
-		.on('change', logWatch);
+	plugins.watch(vendors, function(event) {
+		gulp.start(['vendorjs', 'vendorcss']);
+		logWatch(event, vendors);
+	});
 
-	gulp
-		.watch(gulpconf, ['vendorjs', 'vendorcss', 'js', 'css', 'fonts', 'images', 'buildIncludes'])
-		.on('change', logWatch);
+	plugins.watch(gulpconf, function(event) {
+		gulp.start(['vendorjs', 'vendorcss', 'js', 'css', 'fonts', 'images', 'buildIncludes']);
+		logWatch(event, gulpconf);
+	});
 
-	function logWatch(event) {
-		log('*** File ' + event.path + ' was ' + event.type + ', running tasks...');
+	function logWatch(event, paths) {
+		log('*** File ' + event.path + ' was changed' + ', rebuilding files in ' + paths + ' ...');
 	}
 });
 
